@@ -6,9 +6,9 @@ dataSources:
     name: Token
     network: mumbai
     source:
-      address: "0x2d851ee8C7804119fC0a5807a5b8619078F32d32"
+      address: "0xf0159c417909FA209Bc73cEA8C7106ee9650ef31"
       abi: Token
-      startBlock: 30000000
+      startBlock: 34420200
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

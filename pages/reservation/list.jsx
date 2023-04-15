@@ -20,7 +20,7 @@ export default function Home({tokens}) {
       title: 'page',
       key: 'page',
       render: (text, record) => (
-        <Button type="link" href={`https://testnets.opensea.io/ja/assets/mumbai/0x2d851ee8c7804119fc0a5807a5b8619078f32d32/${record.tokenID}`}>
+        <Button type="link" href={`https://testnets.opensea.io/ja/assets/mumbai/0xf0159c417909FA209Bc73cEA8C7106ee9650ef31/${record.tokenID}`}>
           OpenSea Page
         </Button>
       ),
@@ -49,7 +49,7 @@ export async function getServerSideProps(context) {
   }
 
   const client = new ApolloClient({
-    uri: 'https://api.studio.thegraph.com/query/45447/ethglobalproduction/v0.0.1',
+    uri: 'https://api.studio.thegraph.com/query/45447/gourmetjourneyticket/v1.0.3',
     cache: new InMemoryCache(),
   });
 

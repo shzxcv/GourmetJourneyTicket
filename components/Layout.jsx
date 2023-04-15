@@ -16,7 +16,7 @@ function AllLayout({ children }) {
   return (
     <div>
       <Head>
-        <title>NFT Dine Reserve</title>
+        <title>Gourmet Journey Ticket</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
