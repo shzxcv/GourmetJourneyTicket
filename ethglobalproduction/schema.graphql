@@ -1,0 +1,35 @@
+type _Schema_
+  @fulltext(
+    name: "covenSearch"
+    language: en
+    algorithm: rank
+    include: [{entity: "TokenMetadata", fields:
+      [{ name: "name" }, { name: "description" }, { name: "type" }, { name: "sun" }, { name: "moon" }, { name: "rising" }
+    ] }]
+  )
+
+type Token @entity {
+  id: ID!
+  tokenID: BigInt!
+  tokenURI: String!
+  ipfsURI: TokenMetadata
+  updatedAtTimestamp: BigInt
+  owner: User!
+}
+
+type TokenMetadata @entity {
+  id: ID!
+  image: String!
+  externalURL: String!
+  name: String!
+  description: String!
+  type: String!
+  sun: String!
+  moon: String!
+  rising: String!
+}
+
+type User @entity {
+  id: ID!
+  tokens: [Token!]! @derivedFrom(field: "owner")
+}
