@@ -1,7 +1,7 @@
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import Head from "next/head";
 import { domainName } from "../const/yourDetails";
 import "../styles/globals.css";
+import AllLayout from '../components/Layout'
 
 // This is the chain your dApp will work on.
 const activeChain = "mumbai";
@@ -15,15 +15,9 @@ function MyApp({ Component, pageProps }) {
         authUrl: "/api/auth",
       }}
     >
-      <Head>
-        <title>NFT Dine Reserve</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="NFT makes a great exchange of store reservations."
-        />
-      </Head>
-      <Component {...pageProps} />
+      <AllLayout>
+        <Component {...pageProps} />
+      </AllLayout>
     </ThirdwebProvider>
   );
 }
