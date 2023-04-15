@@ -9,7 +9,7 @@ const Transfer = async (req, res) => {
   );
   const contract = await sdk.getContract(contractAddress);
 
-  const result = await contract.erc1155.transfer(to, tokenId, seats);
+  const result = await contract.erc721.transfer(to, tokenId);
   console.log(result);
   return res.status(200).json({ success: true });
 };

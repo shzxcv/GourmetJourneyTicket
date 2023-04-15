@@ -6,7 +6,6 @@ import { Button, Form, Input, InputNumber, TimePicker, Upload } from 'antd';
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
 
@@ -101,10 +100,6 @@ export default function Home() {
           </Button>
         </Form.Item>
       </Form>
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

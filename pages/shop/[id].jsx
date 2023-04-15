@@ -8,7 +8,6 @@ import prisma from "../../util/prisma";
 import moment from "moment";
 
 export default function Home({shop}) {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const [ nftLoading, setNftLoading ] = useState(false);
   const [ loadingContents, setLoadingContents ] = useState(false);
@@ -91,10 +90,6 @@ export default function Home({shop}) {
           </Form.Item>
         </Form>
       }
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

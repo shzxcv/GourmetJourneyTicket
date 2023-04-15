@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import Link from 'next/link'
 
 export default function Home() {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
 
@@ -33,10 +32,6 @@ export default function Home() {
       <Link href="/shop/new" className={styles.link}>
         Are you a store owner? You can register your store.
       </Link>
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

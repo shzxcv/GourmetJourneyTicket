@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 export default function Home({tokens}) {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
 
@@ -32,10 +31,6 @@ export default function Home({tokens}) {
     <div className={styles.container}>
       <h1 className={styles.h1}>Reservation List</h1>
       <Table columns={columns} dataSource={tokens} />
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

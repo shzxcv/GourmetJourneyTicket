@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import prisma from "../../util/prisma";
 
 export default function Home({shops}) {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
 
@@ -42,10 +41,6 @@ export default function Home({shops}) {
     <div className={styles.container}>
       <h1 className={styles.h1}>Shop list</h1>
       <Table columns={columns} dataSource={shops} />
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

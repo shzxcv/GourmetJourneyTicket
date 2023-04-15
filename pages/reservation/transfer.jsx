@@ -6,7 +6,6 @@ import { Button, Form, Input, Spin } from 'antd';
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
   const [ nftLoading, setNftLoading ] = useState(false);
@@ -45,13 +44,13 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>transfer you reservation</h1>
+      <h1 className={styles.h1}>Transfer you reservation</h1>
       {nftLoading ? loadingContents :
         <Form
           name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600 }}
+          labelCol={{ span: 10 }}
+          wrapperCol={{ span: 30 }}
+          style={{ maxWidth: 1000 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           autoComplete="off"
@@ -87,10 +86,6 @@ export default function Home() {
           </Form.Item>
         </Form>
       }
-
-      <button className={styles.mainButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }
